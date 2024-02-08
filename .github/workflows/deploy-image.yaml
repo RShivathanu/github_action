@@ -59,13 +59,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-
-		- name: Configure kubectl
-		  run: |
-			 echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig
-			 export KUBECONFIG=kubeconfig
+      - name: Configure kubectl
+        run: |
+         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig 
+         export KUBECONFIG=kubeconfig
   
-		#   - name: Deploy to DigitalOcean Kubernetes
-			#  run: |
-				# kubectl apply -f path/to/your/deployment.yaml
+      - name: Deploy to DigitalOcean Kubernetes
+        run: |
+         kubectl apply -f path/to/your/deployment.yaml
   
