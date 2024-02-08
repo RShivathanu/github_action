@@ -74,7 +74,7 @@ jobs:
   
 
       - name: Save DigitalOcean kubeconfig with short-lived credentials
-        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 do-blr1-mycenta-dev-k8s-1-28-2-do-0-blr1-1703565494199
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 mycenta-dev-k8s-1-28-2-do-0-blr1-1703565494199
 
 
       - name: Deploy to DigitalOcean Kubernetes
