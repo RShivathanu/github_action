@@ -66,5 +66,5 @@ jobs:
   
       - name: Deploy to DigitalOcean Kubernetes
         run: |
-         kubectl apply -f path/to/your/deployment.yaml
+         kubectl rollout restart deployment backend-deploy
   
