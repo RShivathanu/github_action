@@ -59,6 +59,15 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+
+
+      - name: Set up DigitalOcean CLI
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+         #  version: '2.3.0'
+
+
       - name: Configure kubectl
         run: |
          echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig 
