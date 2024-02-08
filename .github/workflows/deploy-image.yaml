@@ -70,8 +70,7 @@ jobs:
 
       - name: Configure kubectl
         run: |
-         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig 
-         export KUBECONFIG=kubeconfig
+         echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig export KUBECONFIG=kubeconfig
   
       - name: Deploy to DigitalOcean Kubernetes
         run: |
