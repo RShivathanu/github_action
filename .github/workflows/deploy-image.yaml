@@ -69,15 +69,14 @@ jobs:
 
 
       # - name: Configure kubectl
-      #   run: |
-      #    echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig export KUBECONFIG=kubeconfig
+      #   run: echo ${{ secrets.KUBE_CONFIG }} | base64 --decode > kubeconfig export KUBECONFIG=kubeconfig
   
 
       - name: Save DigitalOcean kubeconfig with short-lived credentials
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 mycenta-dev-k8s-1-28-2-do-0-blr1-1703565494199
 
 
-      - name: Deploy to DigitalOcean Kubernetes
-        run: |
-         kubectl rollout restart deployment backend-deploy
+      # - name: Deploy to DigitalOcean Kubernetes
+      #   run: |
+      #    kubectl rollout restart deployment backend-deploy
   
